@@ -10,11 +10,13 @@ using namespace std;
 #define MAXPERSONS 99
 #define MAXCHILDREN 10
 
+//structure for each person (node)
 struct personNode{
 	int number;
 	
 };
 
+//structure for each family (person nodes are connected via pointers)
 struct familyNode{
 	 personNode* husband;
 	 personNode* wife;
