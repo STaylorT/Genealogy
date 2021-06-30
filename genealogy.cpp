@@ -30,17 +30,17 @@ void popFront(vector<int> &v){
 struct personNode;
 struct familyNode{
 	 int famNumber=0;
-	 personNode* husband;
-	 personNode* wife;
-	 personNode* children[MAXCHILDREN]; 
-	 vertex_s* rep = new vertex_s;
+	 personNode* husband; // point to one husband in family
+	 personNode* wife;    // point to one wife in family
+	 personNode* children[MAXCHILDREN]; // point to up to MAXCHILDREN children in family
+	 vertex_s* rep = new vertex_s; // for union-find algorithm: representative
 	 
 };
 struct personNode{
 	int number=0;
-	familyNode* parentage;
-	familyNode* marriage;
-	vertex_s* rep = new vertex_s;
+	familyNode* parentage; // points to family that this person is a child of
+	familyNode* marriage;  // points to family that this person is a parent of
+	vertex_s* rep = new vertex_s; // representative for union find
 
 };
 
